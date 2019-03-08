@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Meeting Room Data Server</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    table {
+      border-collapse: collapse;
+    }
+    tr, td {
+      border: solid 1px #ddd;
+    }
+    td {
+      width: 30px;
+      text-align: center;
+      height: 30px;
+    }
+  </style>
+</head>
+<body>
+
+  Row: <input type="number" id="row" value="0" min="4" max="100">
+  Col: <input type="number" id="col" value="0" min="4" max="100">
+  <br>
+  Start: <input type="text" id="start" value="">
+  End: <input type="text" id="end" value="">
+  <button type="button" onclick="findPosition()">길찾기</button>
+
+  <ul>
+    <li>테이블 클릭 시 미사용블럭 지정(0 => 1)</li>
+    <li>테이블 우클릭 시 출발/도착 좌표 지정</li>
+  </ul>
+
+  <hr>
+
+  <table>
+  </table>
+  <script src="mazeSearch.js"></script>
+  <script src="main.js"></script>
+  <script>
+    window.onload = () => {
+      init();
+    };
+  </script>
+</body>
+</html>

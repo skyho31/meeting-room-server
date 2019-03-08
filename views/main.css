@@ -1,0 +1,63 @@
+#container {
+  background-image: url("./assets/7th_floor.png");
+  background-repeat: no-repeat;
+  width: 2000px;
+  height: 700px;
+  background-size: contain;
+}
+
+#container .box {
+  float: left;
+  width: 25px;
+  height: 25px;
+  border: 1px solid black;
+  font-size: 5px;
+  /* color: transparent; */
+}
+
+#container .block {
+  background: black;
+}
+
+#container .box:hover {
+  background-color: #ff666636;
+  cursor: pointer;
+  color: black;
+}
+
+#container .box.selected {
+  background-color: rgba(0, 0, 255, 0.349);
+  color: black;
+  position: relative;
+}
+
+#container .box.disabled {
+  background-color:black;
+  color: transparent;
+  opacity: 0.5;
+}
+
+#container .empty-column {
+  height: 54px;
+}
+
+#container .empty-row {
+  float: left;
+  width: 32px;
+  height: 100%;
+}
+
+#container .child {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  font-size: 5px;
+}
+
+#container .here {
+  background: #ff6666 !important;
+}
+
+#container .path {
+  background-color: yellow !important;
+}

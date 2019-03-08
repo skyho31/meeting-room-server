@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Meeting Room Data Server</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    table {
+      border-collapse: collapse;
+    }
+    tr, td {
+      border: solid 1px #ddd;
+    }
+  </style>
+</head>
+<body>
+<h1>Question</h1>
+<div id="question"></div>
+<h1>Answer</h1>
+<div id="answer"></div>
+  <script>
+    const getColor = level => {
+      switch(true) {
+        case isRange(level, 0, -10): return '#000';
+        case isRange(level, -11, -20): return '#111';
+        case isRange(level, -21, -30): return '#222';
+        case isRange(level, -31, -40): return '#333';
+        case isRange(level, -41, -50): return '#444';
+        case isRange(level, -51, -60): return '#555';
+        case isRange(level, -61, -70): return '#666';
+        case isRange(level, -71, -80): return '#777';
+        case isRange(level, -81, -90): return '#888';
+        case isRange(level, -91, -100): return '#999';
+        case isRange(level, -101, -110): return '#aaa';
+        case isRange(level, -111, -120): return '#bbb';
+        case isRange(level, -121, -130): return '#ccc';
+        case isRange(level, -131, -140): return '#ddd';
+        case isRange(level, -141, -150): return '#eee';
+      }
+    };
+    const isRange = (level, start, end) => {
+      return level >= end && level <= start;
+    };
+    const render = (id, data) => {
+      document.getElementById(id).innerHTML = `<table>
+    ${data.reduce((acc, item) => {
+        return `${acc}<tr>${item.map(level => `<td style="background-color: ${getColor(level)}">${level}</td>`).join('')}</tr>`
+      }, '')}</table>`;
+    };
+
+    window.onload = async () => {
+      const response = await fetch('./result.json');
+      const result = await response.json();
+      render('question', result.question);
+      render('answer', result.answer);
+    }
+  </script>
+</body>
+</html>

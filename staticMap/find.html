@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Meeting Room Data Server</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" type="text/css" media="screen" href="./main.css">
+  </head>
+  <body>
+    <div id="find">
+      <!--
+      normal : 회의실 이미지 보임, 맵 안보임
+      detail : 회의실 이미지 위로, 맵도 위로
+      prev : 회의실 이미지 오른쪽, 맵 페이드 아웃 후 인
+      next : 회의실 이미지 왼쪽, 맵 페이드 아웃 후 인
+      -->
+      <div id="room_info">
+        <div class="room_code">N7</div>
+        <div class="room_name">Amy 회의실</div>
+        <div class="room_image">
+          <button type="button" class="room_prev"></button>
+          <button type="button" class="room_next"></button>
+          <div class="room_photo"><img src="./meetingroom/photo/L1.jpg"></div>
+          <ul class="room_detail">
+            <li>8명 가능</li>
+          </ul>
+        </div>
+        <div class="room_map">
+          <img src="./meetingroom/map/L1.png">
+          <div class="room_app_btn">
+            <button type="button" class="room_ar main_bg">AR</button>
+            <button type="button" class="room_map main_bg">MAP</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="./model.js"></script>
+    <script src="./find.js"></script>
+  </body>
+</html>
