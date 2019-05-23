@@ -3,3 +3,5 @@
 /db/wifi_list.json
 /db/*/*
 .idea
+*.zip
+/thanos_parser/*.txt

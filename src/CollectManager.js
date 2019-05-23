@@ -45,6 +45,10 @@ class CollectManager {
   }
 
   collect(req, res) {
+    // console.log(req.body)
+    // res.end()
+    // return
+
     const resData = req.body
     let parsedData;
 
